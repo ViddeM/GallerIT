@@ -1,22 +1,46 @@
+
 <!-- HTML for this component
 Note that there can only be one root element inside the "template" tags
 Variables can be used as {{ variable }}
 For more Vue template syntax see https://vuejs.org/v2/guide/syntax.html
  -->
+
 <template>
-  <!-- Lazy loading of thumnail image --> 
-  <div class="root" v-lazy:background-image="thumbnail_url">
-    {{title}}
+  <div class="emptySpace">
+    <!-- Lazy loading of thumnail image -->
+    <div class="root" v-lazy:background-image="thumbnail_url">
+      <div class="banner">
+        <div class="name">
+          {{title}}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <!-- sass or css styling specific to this component -->
 <style lang="scss" scoped>
+.emptySpace {
+  margin: 5%;
+}
 .root {
   /* 4:3 aspect ratio*/
   width: 300px;
   height: 225px;
-  background-size: contain;
+  background-size: auto;
+}
+.banner {
+  position: relative;
+  top: 160px;
+  width: 220px;
+  height: 40px;
+  background-color: #09cdda; 
+
+}
+.name {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: inline-block;
 }
 </style>
 
